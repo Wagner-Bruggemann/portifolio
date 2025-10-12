@@ -8,47 +8,10 @@
   font-display: swap;
 }
 
-/* Montserrat Italic (Variable) */
 @font-face {
   font-family: 'Montserrat';
   src: url('@/assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Space Mono Regular */
-@font-face {
-  font-family: 'Space Mono';
-  src: url('@/assets/fonts/SpaceMono-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Space Mono Italic */
-@font-face {
-  font-family: 'Space Mono';
-  src: url('@/assets/fonts/SpaceMono-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Space Mono Bold */
-@font-face {
-  font-family: 'Space Mono';
-  src: url('@/assets/fonts/SpaceMono-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Space Mono Bold Italic */
-@font-face {
-  font-family: 'Space Mono';
-  src: url('@/assets/fonts/SpaceMono-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
   font-style: italic;
   font-display: swap;
 }

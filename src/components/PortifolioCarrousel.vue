@@ -14,7 +14,7 @@
             project.active ? 'opacity-100 scale-100' : 'opacity-30 scale-95 blur-[1px]',
           ]"
           @mouseenter="activate(index)"
-          :ref="(element) => (cards[index] = element)"
+          :ref="(element) => (cards[index] = element as ComponentPublicInstance)"
         />
       </div>
     </div>
@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { nextTick, ref, type ComponentPublicInstance } from 'vue'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 import SansysImg from '@/assets/SANSYS.png'
 
@@ -82,17 +82,18 @@ const projects = ref([
   },
 ])
 
-const cards = ref([])
+const cards = ref<(ComponentPublicInstance | null)[]>([])
 
 function activate(index: number) {
   projects.value.forEach((project) => (project.active = false))
   projects.value[index].active = true
-  setTimeout(() => {
-    cards.value[index].$el.scrollIntoView({
+  nextTick(() => {
+    const card = cards.value[index]
+    card?.$el.scrollIntoView({
       behavior: 'smooth',
       inline: 'center',
       block: 'nearest',
     })
-  }, 300)
+  })
 }
 </script>
