@@ -3,7 +3,7 @@
     <nav class="flex space-x-5 justify-center cursor-pointer">
       <a
         class="relative group hover:-translate-y-1 transition duration-300 ease-in-out p-2"
-        v-for="item in navItems"
+        v-for="item in navStore.navItems"
         :key="item.id"
         @click="emitEvent(item)"
       >
@@ -21,10 +21,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps, defineEmits, onMounted } from 'vue'
+import { defineProps, defineEmits, onMounted } from 'vue'
 import type { NavItem } from '@/types/Types'
 import { useThemeStore } from '@/stores/theme'
+import { useNavStore } from '@/stores/navbar'
+
 const themeStore = useThemeStore()
+const navStore = useNavStore()
 
 const props = defineProps<{
   items: NavItem[]
@@ -34,51 +37,12 @@ const emit = defineEmits<{
   (e: 'click', item: NavItem): void
 }>()
 
-const navItems = ref<NavItem[]>([])
-
-function getScrollableParent(el: HTMLElement | null): HTMLElement | null {
-  while (el && el !== document.body) {
-    const style = getComputedStyle(el)
-    const overflowY = style.overflowY
-    const canScroll =
-      (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'overlay') &&
-      el.scrollHeight > el.clientHeight
-    if (canScroll) return el
-    el = el.parentElement
-  }
-  return null
-}
-
 function emitEvent(item: NavItem) {
-  navItems.value = props.items.map((i) => ({
-    ...i,
-    active: i.id === item.id,
-  }))
   emit('click', item)
-
-  const section = document.getElementById(item.targetId)
-  if (!section) return
-
-  const scrollParent = getScrollableParent(section)
-  if (!scrollParent) return
-
-  const offset = 120
-  const parentRect = scrollParent.getBoundingClientRect()
-  const sectionRect = section.getBoundingClientRect()
-
-  const relativeTop = Math.max(
-    0,
-    scrollParent.scrollTop + (sectionRect.top - parentRect.top) - offset,
-  )
-
-  console.log(relativeTop)
-  scrollParent.scrollTo({
-    top: relativeTop,
-    behavior: 'smooth',
-  })
+  navStore.scrollTo(item)
 }
 
 onMounted(() => {
-  navItems.value = props.items
+  navStore.setUp(props.items)
 })
 </script>

@@ -6,8 +6,8 @@
     <img class="mb-5" :src="props.image" />
     <div class="text-2xl">{{ props.project }}</div>
     <div class="mb-15">{{ props.company }}</div>
-    <div class="flex space-x-2">
-      <TextChip v-for="(chip, index) in chips" :key="index">{{ chip }}</TextChip>
+    <div class="flex flex-wrap justify-center space-x-2">
+      <TextChip v-for="(tag, index) in tags" :key="index">{{ tag }}</TextChip>
     </div>
   </div>
 </template>
@@ -22,6 +22,6 @@ const props = defineProps<{
   image: string
   project: string
   company: string
-  chips: string[]
+  tags: string[]
 }>()
 </script>

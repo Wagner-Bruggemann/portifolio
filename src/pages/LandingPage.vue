@@ -6,7 +6,7 @@
     <NavBar class="fixed top-0 left-0 w-full z-50" />
     <FrontPage id="home" />
     <PortifolioCarrousel id="portifolio" />
-    <div class="h-1 w-4/5 bg-white"></div>
+    <div class="h-1 w-4/5" :class="[themeStore.isDark ? 'bg-white' : 'bg-[#636363]']"></div>
     <ToolsSection />
     <AboutSection id="about" />
     <ContactSection id="contact" />

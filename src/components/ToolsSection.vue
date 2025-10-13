@@ -1,10 +1,9 @@
 <template>
   <div class="w-full mt-20">
     <div class="flex w-full justify-center items-center mb-10 text-2xl">Ferramentas</div>
-
-    <!-- Container que anima -->
     <div
-      class="relative w-full overflow-hidden group"
+      class="relative w-full overflow-hidden group pb-5"
+      :class="[themeStore.isDark ? '' : 'shadow-xl shadow-gray-100']"
       @mouseenter="isPaused = true"
       @mouseleave="isPaused = false"
     >
@@ -33,7 +32,7 @@
     </div>
 
     <div class="p-5 pt-20 flex justify-center items-center space-x-3">
-      <DefaultButton>
+      <DefaultButton @click="navStore.scrollTo(contact)">
         <template v-slot:text>
           <div>CONTATO</div>
         </template>
@@ -41,11 +40,13 @@
           <ArrowRight />
         </template>
       </DefaultButton>
-      <DefaultButton>
-        <template v-slot:text>
-          <div>LINKEDIN</div>
-        </template>
-      </DefaultButton>
+      <a href="https://www.linkedin.com/in/wagner-bruggemann">
+        <DefaultButton>
+          <template v-slot:text>
+            <div>LINKEDIN</div>
+          </template>
+        </DefaultButton>
+      </a>
     </div>
   </div>
 </template>
@@ -89,8 +90,13 @@ import LightVue from '@/assets/BOX_VUE_LIGHT.png'
 import DefaultButton from './ui/DefaultButton.vue'
 import { ArrowRight } from 'lucide-vue-next'
 import { useThemeStore } from '@/stores/theme'
+import { useNavStore } from '@/stores/navbar'
+import type { NavItem } from '@/types/Types'
 
 const themeStore = useThemeStore()
+const navStore = useNavStore()
+
+const contact: NavItem = { id: 4, label: 'Contato', active: false, targetId: 'contact' }
 
 const darkVersionTools = ref([
   { image: Java, label: 'Java' },

@@ -16,7 +16,7 @@
         />
       </div>
       <div class="p-5 pt-30 flex items-center space-x-3">
-        <DefaultButton>
+        <DefaultButton @click="navStore.scrollTo(contact)">
           <template v-slot:text>
             <div>CONTATO</div>
           </template>
@@ -41,6 +41,11 @@ import LightHexagons from '@/assets/HEXAGONS_LIGHT.png'
 import { ArrowRight } from 'lucide-vue-next'
 import DefaultButton from './ui/DefaultButton.vue'
 import { useThemeStore } from '@/stores/theme'
+import { useNavStore } from '@/stores/navbar'
+import type { NavItem } from '@/types/Types'
 
 const themeStore = useThemeStore()
+const navStore = useNavStore()
+
+const contact: NavItem = { id: 4, label: 'Contato', active: false, targetId: 'contact' }
 </script>
