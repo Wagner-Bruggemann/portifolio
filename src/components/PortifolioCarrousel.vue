@@ -45,7 +45,7 @@
 import DefaultModal from './ui/DefaultModal.vue'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 import { nextTick, ref, type ComponentPublicInstance } from 'vue'
-import { projects as staticProjects } from '@/data/projects.js'
+import { projects as staticProjects } from '@/data/projects'
 import ProjectModal from './ui/ProjectModal.vue'
 import type { Project } from '@/types/Types'
 
