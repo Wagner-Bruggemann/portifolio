@@ -7,7 +7,13 @@
     <div class="text-2xl">{{ props.project }}</div>
     <div class="mb-15">{{ props.company }}</div>
     <div class="flex flex-wrap justify-center space-x-2">
-      <TextChip v-for="(tag, index) in tags" :key="index">{{ tag }}</TextChip>
+      <TextChip
+        class="text-white border-2"
+        :class="[themeStore.isDark ? 'border-white' : 'border-black']"
+        v-for="(tag, index) in tags"
+        :key="index"
+        >{{ tag }}</TextChip
+      >
     </div>
   </div>
 </template>
@@ -16,6 +22,7 @@
 import { defineProps } from 'vue'
 import TextChip from '@/components/ui/TextChip.vue'
 import { useThemeStore } from '@/stores/theme'
+
 const themeStore = useThemeStore()
 
 const props = defineProps<{

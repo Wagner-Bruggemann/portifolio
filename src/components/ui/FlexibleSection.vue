@@ -4,15 +4,16 @@
       class="bg-[#4C6781] mt-1 px-2 py-1 flex justify-between items-center cursor-pointer"
       :class="[isOpened ? 'rounded-t-xl' : 'rounded-xl']"
     >
-      {{ item.title }}
+      <TextTranslator :attribute="item.title" />
       <ChevronUp v-if="isOpened" />
       <ChevronDown v-else />
     </div>
     <transition name="expand">
       <div v-if="isOpened" class="bg-white p-4" :class="[isOpened ? 'rounded-b-xl' : 'rounded-xl']">
-        <ul :key="index" v-for="(section, index) in item.sections" class="text-black text-sm py-1">
+        <ul :key="index" v-for="(section, index) in item.sections" class="text-black text-md py-1">
           <li>
-            {{ '- ' + section }}
+            {{ '- ' }}
+            <TextTranslator :attribute="section" />
           </li>
         </ul>
       </div>
@@ -25,6 +26,7 @@ import { ref, defineProps, defineEmits, watch } from 'vue'
 import type { Item } from '@/types/Types'
 import { ChevronUp } from 'lucide-vue-next'
 import { ChevronDown } from 'lucide-vue-next'
+import TextTranslator from '@/components/ui/TextTranslator.vue'
 
 const props = defineProps<{ item: Item; shouldClose: boolean }>()
 const emit = defineEmits<{

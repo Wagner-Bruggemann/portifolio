@@ -1,6 +1,5 @@
 export type Item = {
   title: string
-  subtitle: string
   sections: string[]
 }
 
@@ -13,7 +12,6 @@ export type NavItem = {
 
 export type ProjectItem = {
   title: string
-  subtitle: string
   sections: string[]
 }
 

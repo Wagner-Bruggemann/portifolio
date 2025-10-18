@@ -18,7 +18,7 @@
           />
           <DefaultModal
             class=""
-            sizes="w-3/4 h-3/4"
+            sizes="w-5/6 h-5/6"
             :visible="project.opened"
             @close="closeModal(project)"
           >
