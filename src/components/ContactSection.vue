@@ -7,7 +7,9 @@
     />
     <div class="relative z-10 mt-40 flex justify-center text-black">
       <div class="flex flex-col items-center">
-        <h1 class="text-4xl mb-20">Contato</h1>
+        <h1 class="text-4xl mb-20">
+          <TextTranslator attribute="contact" />
+        </h1>
         <div class="flex justify-center items-center text-xl gap-x-20">
           <img class="w-1 h-90" :src="Decorador" alt="Decorador" />
           <div class="flex flex-col gap-y-10 cursor-pointer">
@@ -61,5 +63,7 @@ import Map from '@/assets/MAP.png'
 import Seta from '@/assets/SETA_ITEM.png'
 import Decorador from '@/assets/DECORADOR_LATERAL.png'
 import { useThemeStore } from '@/stores/theme'
+import TextTranslator from '@/components/ui/TextTranslator.vue'
+
 const themeStore = useThemeStore()
 </script>

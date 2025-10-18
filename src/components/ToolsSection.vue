@@ -1,6 +1,8 @@
 <template>
   <div class="w-full mt-20">
-    <div class="flex w-full justify-center items-center mb-10 text-2xl">Ferramentas</div>
+    <div class="flex w-full justify-center items-center mb-10 text-2xl">
+      <TextTranslator attribute="toolbox" />
+    </div>
     <div
       class="relative w-full overflow-hidden group pb-5"
       :class="[themeStore.isDark ? '' : 'shadow-xl shadow-gray-100']"
@@ -34,7 +36,7 @@
     <div class="p-5 pt-20 flex justify-center items-center space-x-3">
       <DefaultButton @click="navStore.scrollTo(contact)">
         <template v-slot:text>
-          <div>CONTATO</div>
+          <div><TextTranslator attribute="contact_uppercase" /></div>
         </template>
         <template v-slot:after>
           <ArrowRight />
@@ -92,6 +94,7 @@ import { ArrowRight } from 'lucide-vue-next'
 import { useThemeStore } from '@/stores/theme'
 import { useNavStore } from '@/stores/navbar'
 import type { NavItem } from '@/types/Types'
+import TextTranslator from '@/components/ui/TextTranslator.vue'
 
 const themeStore = useThemeStore()
 const navStore = useNavStore()

@@ -7,7 +7,7 @@
         :key="item.id"
         @click="emitEvent(item)"
       >
-        {{ item.label }}
+        <TextTranslator :attribute="item.label" />
         <span
           class="absolute left-0 bottom-[-10px] h-0.5 w-full origin-center transition-transform duration-200 ease-out"
           :class="[
@@ -25,6 +25,7 @@ import { defineProps, defineEmits, onMounted } from 'vue'
 import type { NavItem } from '@/types/Types'
 import { useThemeStore } from '@/stores/theme'
 import { useNavStore } from '@/stores/navbar'
+import TextTranslator from '@/components/ui/TextTranslator.vue'
 
 const themeStore = useThemeStore()
 const navStore = useNavStore()

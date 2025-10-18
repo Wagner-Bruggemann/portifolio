@@ -1,18 +1,15 @@
 <template>
   <div class="w-full mt-30">
-    <div class="flex w-full justify-center items-center mb-10 text-4xl">Sobre</div>
+    <div class="flex w-full justify-center items-center mb-10 text-4xl">
+      <TextTranslator attribute="about" />
+    </div>
     <div class="flex justify-center items-center">
       <div class="text-xl p-10">
-        <div class="max-w-95 mb-10">
-          Olá, eu sou Wagner Brüggemann, um <strong>Desenvolvedor Backend</strong> com mais de
-          <strong>4 anos de experiência</strong>. Com um forte foco no
-          <strong>desenvolvimento</strong>, eu combino código de alta performance com as melhores
-          práticas do mercado.
+        <div class="max-w-100 mb-10">
+          <TextTranslator attribute="about_hello" />
         </div>
         <div class="max-w-100">
-          Sou especializado em aplicações <strong>Java</strong> com ambiente
-          <strong>Spring</strong>, com foco em arquitetura limpa. Minha capacidade de adaptação aos
-          diferentes cenários e expertise técnica me permitem transformar ideias em realidade.
+          <TextTranslator attribute="java_specialist" />
         </div>
         <div class="border rounded-4xl py-2 px-6 mt-10">
           <div class="font-bold italic font-mono">public Dev getDev {</div>
@@ -37,6 +34,7 @@
 import DarkAboutImage from '@/assets/ABOUT.png'
 import LightAboutImage from '@/assets/ABOUT_LIGHT.png'
 import { useThemeStore } from '@/stores/theme'
+import TextTranslator from '@/components/ui/TextTranslator.vue'
 
 const themeStore = useThemeStore()
 </script>

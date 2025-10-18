@@ -1,0 +1,14 @@
+{
+  "home": "Home",
+  "portfolio": "Portfolio",
+  "about": "About",
+  "contact": "Contact",
+  "hello_im": "Hello, I am",
+  "backend": "Backend",
+  "developer": "Developer",
+  "contact_uppercase": "CONTACT",
+  "curriculum": "CURRICULUM",
+  "toolbox": "Tool Box",
+  "about_hello": "Hello, I am Wagner Brüggemann, a <strong>Backend Developer</strong> with over <strong>4 years of experience</strong>. With a strong focus on <strong>development</strong>, I combine high-performance code with the best industry practices.",
+  "java_specialist": "I am specialized in Java applications within a Spring environment, with a focus on clean architecture. My adaptability to different scenarios and technical expertise allow me to turn ideas into reality."
+}

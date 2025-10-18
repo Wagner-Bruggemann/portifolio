@@ -2,14 +2,28 @@
   <div class="pt-50 grid grid-cols-[1fr_5fr] mb-40">
     <div class="pr-10 text-xl">
       <img :src="LightHomeIcon" class="w-20" />
-      <div>Olá, eu sou</div>
+      <div>
+        <TextTranslator attribute="hello_im" />
+      </div>
       <div>Wagner</div>
       <div>Brüggemann</div>
     </div>
     <div>
-      <div class="relative text-8xl z-0 mt-20">
-        <div class="z-10">Desenvolvedor</div>
-        <div class="z-10">Backend</div>
+      <div v-if="langStore.systemLang == Language.Portuguese" class="relative text-8xl z-0 mt-20">
+        <div class="">
+          <div class="z-10"><TextTranslator attribute="developer" /></div>
+          <div class="z-10"><TextTranslator attribute="backend" /></div>
+        </div>
+        <img
+          class="absolute left-74 -bottom-23 -z-5"
+          :src="themeStore.isDark ? DarkHexagons : LightHexagons"
+        />
+      </div>
+      <div v-else class="relative text-8xl z-0 mt-20 pl-20">
+        <div>
+          <div class="z-10"><TextTranslator attribute="backend" /></div>
+          <div class="z-10"><TextTranslator attribute="developer" /></div>
+        </div>
         <img
           class="absolute left-74 -bottom-23 -z-5"
           :src="themeStore.isDark ? DarkHexagons : LightHexagons"
@@ -18,7 +32,7 @@
       <div class="p-5 pt-30 flex items-center space-x-3">
         <DefaultButton @click="navStore.scrollTo(contact)">
           <template v-slot:text>
-            <div>CONTATO</div>
+            <div><TextTranslator attribute="contact_uppercase" /></div>
           </template>
           <template v-slot:after>
             <ArrowRight />
@@ -26,7 +40,7 @@
         </DefaultButton>
         <DefaultButton>
           <template v-slot:text>
-            <div>CURRÍCULO</div>
+            <div><TextTranslator attribute="curriculum" /></div>
           </template>
         </DefaultButton>
       </div>
@@ -43,7 +57,11 @@ import DefaultButton from './ui/DefaultButton.vue'
 import { useThemeStore } from '@/stores/theme'
 import { useNavStore } from '@/stores/navbar'
 import type { NavItem } from '@/types/Types'
+import TextTranslator from '@/components/ui/TextTranslator.vue'
+import { Language } from '@/types/Types'
+import { useLanguageStore } from '@/stores/language'
 
+const langStore = useLanguageStore()
 const themeStore = useThemeStore()
 const navStore = useNavStore()
 

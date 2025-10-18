@@ -34,3 +34,8 @@ export enum Theme {
   Light,
   Dark,
 }
+
+export enum Language {
+  Portuguese = 'portuguese',
+  English = 'english',
+}
