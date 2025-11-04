@@ -3,15 +3,22 @@
     class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
     :class="[themeStore.isDark ? 'bg-[#2E2E2E]' : 'bg-white']"
   >
-    <div class="grid grid-cols-[1fr_2fr_2fr_2fr_1fr] items-center pt-4 pb-3 shadow-2xl border-b">
-      <div></div>
-      <div class="font-bold italic font-mono cursor-pointer">
+    <div
+      class="grid grid-cols-[1fr_2fr] md:grid-cols-[1fr_2fr_2fr_2fr_1fr] items-center pt-4 pb-3 shadow-2xl border-b"
+    >
+      <div class="hidden md:block"></div>
+      <div class="hidden md:block font-bold italic font-mono cursor-pointer">
         <a href="https://www.linkedin.com/in/wagner-bruggemann">
           {&nbsp;&nbsp;Wagner_Brüggemann&nbsp;&nbsp;}
         </a>
       </div>
-      <NavItems :items="items" />
-      <div class="flex justify-end items-end space-x-4">
+      <NavItems class="hidden md:block" :items="items" />
+      <div class="flex md:hidden ml-2">
+        <div class="active:bg-gray-400 rounded-full p-2">
+          <Menu />
+        </div>
+      </div>
+      <div class="flex justify-end items-end space-x-4 mr-6 md:mr-0">
         <ThemeSwitch />
         <SelectButton></SelectButton>
       </div>
@@ -27,6 +34,7 @@ import NavItems from './ui/NavItems.vue'
 import ThemeSwitch from './ui/ThemeSwitch.vue'
 import { useThemeStore } from '@/stores/theme'
 import SelectButton from '@/components/ui/SelectButton.vue'
+import { Menu } from 'lucide-vue-next'
 
 const themeStore = useThemeStore()
 

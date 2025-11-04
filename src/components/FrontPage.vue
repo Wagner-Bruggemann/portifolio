@@ -1,31 +1,41 @@
 <template>
-  <div class="pt-50 grid grid-cols-[1fr_5fr] mb-40">
-    <div class="pr-10 text-xl">
-      <img :src="LightHomeIcon" class="w-20" />
-      <div>
-        <TextTranslator attribute="hello_im" />
+  <div class="pt-50 md:grid md:grid-cols-[1fr_5fr] mb-40">
+    <section class="flex justify-center md:block">
+      <div class="md:pr-10 text-xl">
+        <div class="flex flex-col items-center md:block">
+          <img :src="LightHomeIcon" class="w-30 md:w-20" />
+          <div>
+            <TextTranslator attribute="hello_im" />
+          </div>
+          <div>Wagner</div>
+          <div>Brüggemann</div>
+        </div>
       </div>
-      <div>Wagner</div>
-      <div>Brüggemann</div>
-    </div>
-    <div>
-      <div v-if="langStore.systemLang == Language.Portuguese" class="relative text-8xl z-0 mt-20">
-        <div class="">
+    </section>
+    <section>
+      <div
+        v-if="langStore.systemLang == Language.Portuguese"
+        class="relative text-5xl text-shadow-sm text-shadow-gray-900 text md:text-8xl z-0 mt-30 md:mt-20"
+      >
+        <div>
           <div class="z-10"><TextTranslator attribute="developer" /></div>
           <div class="z-10"><TextTranslator attribute="backend" /></div>
         </div>
         <img
-          class="absolute left-74 -bottom-23 -z-5"
+          class="absolute left-2 md:left-74 -bottom-19 md:-bottom-23 -z-5"
           :src="themeStore.isDark ? DarkHexagons : LightHexagons"
         />
       </div>
-      <div v-else class="relative text-8xl z-0 mt-20 pl-20">
+      <div
+        v-else
+        class="relative text-5xl text-shadow-sm text-shadow-gray-900 md:text-8xl z-0 mt-30 md:mt-20 pl-2 md:pl-20"
+      >
         <div>
           <div class="z-10"><TextTranslator attribute="backend" /></div>
           <div class="z-10"><TextTranslator attribute="developer" /></div>
         </div>
         <img
-          class="absolute left-74 -bottom-23 -z-5"
+          class="absolute md:left-74 -bottom-19 md:-bottom-23 -z-5"
           :src="themeStore.isDark ? DarkHexagons : LightHexagons"
         />
       </div>
@@ -44,7 +54,7 @@
           </template>
         </DefaultButton>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 

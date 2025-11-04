@@ -38,13 +38,12 @@
 import { ArrowDown } from 'lucide-vue-next'
 import { ArrowUp } from 'lucide-vue-next'
 import { useLanguageStore } from '@/stores/language'
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { Language } from '@/types/Types'
 
 const languageStore = useLanguageStore()
 
 const isOpened = ref<boolean>(false)
-const selectedLabel = ref('POR')
 const dropdownRef = ref<HTMLElement | null>(null)
 
 const options = [
@@ -54,6 +53,16 @@ const options = [
 function toggleDropdown() {
   isOpened.value = !isOpened.value
 }
+
+const selectedLabel = ref(options.find((o) => o.value === languageStore.systemLang)?.label || 'POR')
+
+watch(
+  () => languageStore.systemLang,
+  (newLang) => {
+    const opt = options.find((o) => o.value === newLang)
+    if (opt) selectedLabel.value = opt.label
+  },
+)
 
 function selectOption(option: { value: string; label: string }) {
   selectedLabel.value = option.label

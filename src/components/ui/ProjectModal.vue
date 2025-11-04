@@ -1,10 +1,16 @@
 <template>
   <div class="flex w-full h-full" :class="[themeStore.isDark ? 'text-white' : 'text-black']">
     <div
-      class="flex-1 rounded-l-2xl text-xl px-6 pt-8"
+      class="flex-1 overflow-auto md:overflow-hidden no-scrollbar md:rounded-l-2xl text-xl px-6 pt-8"
       :class="[themeStore.isDark ? 'bg-[#2E2E2E]' : 'bg-[#DCDCDC]']"
     >
-      <div class="flex justify-between">
+      <div
+        @click="close"
+        class="block md:hidden absolute top-4 right-4 z-10 cursor-pointer rounded-full p-2 hover:bg-[#616161]"
+      >
+        <X />
+      </div>
+      <div class="flex justify-between mt-6 md:mt-0">
         <div>{{ project.company }}</div>
         <div>
           <a :href="project.companyLink" class="flex items-center">
@@ -40,9 +46,25 @@
           />
         </div>
       </div>
+      <div class="block md:hidden mt-6 mb-3">
+        <div class="flex justify-center mb-6 text-2xl">
+          <TextTranslator :attribute="project.imagesSectionTitle" />
+        </div>
+        <div
+          class="flex justify-center items-center mb-3"
+          v-for="(image, index) in project.images"
+          :key="index"
+        >
+          <img
+            class="w-120"
+            :class="{ 'shadow-xl border-2 border-black': !themeStore.isDark }"
+            :src="image"
+          />
+        </div>
+      </div>
     </div>
     <div
-      class="relative flex-3 rounded-2xl bg-[#474747]"
+      class="hidden md:block relative flex-3 rounded-2xl bg-[#474747]"
       :class="[themeStore.isDark ? 'bg-[#474747]' : 'bg-white']"
     >
       <div

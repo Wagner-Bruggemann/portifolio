@@ -1,6 +1,6 @@
 <template>
   <div class="relative p-4 max-w-full">
-    <div class="overflow-auto overflow-x-hidden">
+    <div class="overflow-x-auto md:overflow-auto md:overflow-x-hidden">
       <div class="flex flex-nowrap snap-x snap-mandatory space-x-4">
         <div v-for="(project, index) in projects" :key="index">
           <ProjectCard
@@ -10,7 +10,7 @@
             :company="project.company"
             :tags="project.tags"
             :class="[
-              'w-xl shrink-0 cursor-pointer transition-all duration-500 ease-in-out transform',
+              'w-83 md:w-xl shrink-0 cursor-pointer transition-all duration-500 ease-in-out transform',
               project.active ? 'opacity-100 scale-100' : 'opacity-30 scale-95 blur-[1px]',
             ]"
             @mouseenter="activate(index)"
@@ -18,7 +18,7 @@
           />
           <DefaultModal
             class=""
-            sizes="w-5/6 h-5/6"
+            sizes="w-full h-full md:w-5/6 md:h-5/6"
             :visible="project.opened"
             @close="closeModal(project)"
           >
@@ -32,8 +32,8 @@
         v-for="(project, index) in projects"
         :key="index"
         :class="[
-          'w-5 h-2 bg-[#8ABEEB] rounded-full cursor-pointer transition-all',
-          { ['w-20 h-2 bg-[#2993EF]']: project.active },
+          'w-10 h-4 md:w-5 md:h-2 bg-[#8ABEEB] rounded-full cursor-pointer transition-all',
+          { ['md:w-20 md:h-2 bg-[#2993EF]']: project.active },
         ]"
         @click="activate(index)"
       />
