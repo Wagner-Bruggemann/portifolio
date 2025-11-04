@@ -35,11 +35,11 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowDown } from 'lucide-vue-next'
+import { Language } from '@/types/Types'
 import { ArrowUp } from 'lucide-vue-next'
+import { ArrowDown } from 'lucide-vue-next'
 import { useLanguageStore } from '@/stores/language'
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
-import { Language } from '@/types/Types'
 
 const languageStore = useLanguageStore()
 

@@ -14,9 +14,7 @@
       </div>
       <NavItems class="hidden md:block" :items="items" />
       <div class="flex md:hidden ml-2">
-        <div class="active:bg-gray-400 rounded-full p-2">
-          <Menu />
-        </div>
+        <MenuButton :items="items" />
       </div>
       <div class="flex justify-end items-end space-x-4 mr-6 md:mr-0">
         <ThemeSwitch />
@@ -30,11 +28,11 @@
 import type { NavItem } from '@/types/Types'
 
 import { ref, onMounted } from 'vue'
-import NavItems from './ui/NavItems.vue'
-import ThemeSwitch from './ui/ThemeSwitch.vue'
 import { useThemeStore } from '@/stores/theme'
+import NavItems from '@/components/ui/NavItems.vue'
+import MenuButton from '@/components/ui/MenuButton.vue'
+import ThemeSwitch from '@/components/ui/ThemeSwitch.vue'
 import SelectButton from '@/components/ui/SelectButton.vue'
-import { Menu } from 'lucide-vue-next'
 
 const themeStore = useThemeStore()
 
