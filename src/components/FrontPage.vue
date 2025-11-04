@@ -48,7 +48,7 @@
             <ArrowRight />
           </template>
         </DefaultButton>
-        <DefaultButton>
+        <DefaultButton @click="downloadCurriculum">
           <template v-slot:text>
             <div><TextTranslator attribute="curriculum" /></div>
           </template>
@@ -76,4 +76,11 @@ const themeStore = useThemeStore()
 const navStore = useNavStore()
 
 const contact: NavItem = { id: 4, label: 'Contato', active: false, targetId: 'contact' }
+
+const downloadCurriculum = () => {
+  const link = document.createElement('a')
+  link.href = '/curriculum_vitae.pdf'
+  link.download = 'Currículo - Wagner Brüggemann.pdf'
+  link.click()
+}
 </script>

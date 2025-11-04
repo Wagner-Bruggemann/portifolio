@@ -11,7 +11,7 @@ export const projects: Project[] = [
     opened: false,
     mainImage: SansysImg,
     company: 'Veolia - JTech',
-    companyLink: '',
+    companyLink: 'https://www.jtech.com.br/',
     title: 'Sansys Water',
     imagesSectionTitle: 'public_images',
     tags: [
