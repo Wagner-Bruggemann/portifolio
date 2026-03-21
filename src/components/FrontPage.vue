@@ -79,8 +79,12 @@ const contact: NavItem = { id: 4, label: 'Contato', active: false, targetId: 'co
 
 const downloadCurriculum = () => {
   const link = document.createElement('a')
-  link.href = '/curriculum_vitae.pdf'
+  link.href = '/curriculum_vitae_ptBR.pdf'
   link.download = 'Currículo - Wagner Brüggemann.pdf'
+  if (langStore.systemLang == Language.English) {
+    link.href = '/curriculum_vitae_enUS.pdf'
+    link.download = 'Curriculum Vitae - Wagner Brüggemann.pdf'
+  }
   link.click()
 }
 </script>
