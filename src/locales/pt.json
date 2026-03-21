@@ -36,5 +36,14 @@
   "sansys_about_sansys_title": "- Sobre o Sansys",
   "sansys_about_sansys_sections_0": "Sistema da Jtech para otimizar a gestão de serviços de saneamento.",
   "sansys_about_sansys_sections_1": "Integra leitura de consumo, emissão de faturas, controle de irregularidades e atendimento ao cliente.",
-  "sansys_about_sansys_sections_2": "Facilita a gestão eficiente e a integração com canais digitais."
+  "sansys_about_sansys_sections_2": "Facilita a gestão eficiente e a integração com canais digitais.",
+  "prompt_generator_description_section": "Gerador de Prompts e Documentos com IA",
+  "prompt_generator_features_section": "Funcionalidades",
+  "prompt_generator_description": "Uma ferramenta interativa projetada para gerar prompts de alta qualidade para IA, definições de agentes, PRDs e documentação estruturada por meio de um 'fluxo orientado a perguntas'. Ela suporta tanto uma CLI baseada em terminal quanto uma interface Web moderna.",
+  "prompt_generation": "Geração de Prompts: Crie prompts de IA avançados ou simples respondendo a perguntas direcionadas.",
+  "ai_agent_definition": "Definição de Agente de IA: Defina papéis, responsabilidades e limites para agentes de IA especializados.",
+  "prd_and_spring_planner": "Planejador de PRD e Sprints: Gere Documentos de Requisitos de Produto completos com divisão de tarefas atômicas e roteiros de sprint.",
+  "document_generator": "Gerador de Documentação: Crie rapidamente arquivos como architecture.md, conventions.md ou visões gerais do projeto.",
+  "content_enrichment": "Enriquecimento de Conteúdo: Leia arquivos markdown existentes, aplique melhorias com IA e salve versões enriquecidas.",
+  "dual_interface": "Interface Dupla: Utilize a CLI interativa ou a interface Web local."
 }

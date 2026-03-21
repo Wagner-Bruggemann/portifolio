@@ -36,5 +36,14 @@
   "sansys_about_sansys_title": "- About Sansys",
   "sansys_about_sansys_sections_0": "Jtech system to optimize the management of sanitation services.",
   "sansys_about_sansys_sections_1": "Integrates consumption reading, billing, irregularity control, and customer service.",
-  "sansys_about_sansys_sections_2": "Facilitates efficient management and integration with digital channels."
+  "sansys_about_sansys_sections_2": "Facilitates efficient management and integration with digital channels.",
+  "prompt_generator_description_section": "AI Prompt & Document Generator",
+  "prompt_generator_features_section": "Features",
+  "prompt_generator_description": "An interactive tool designed to generate high-quality AI prompts, agent definitions, PRDs, and structured documentation through a 'question-oriented workflow.' It supports both a terminal-based CLI and a modern Web GUI.",
+  "prompt_generation": "Prompt Generation: Create advanced or simple AI prompts by answering targeted questions.",
+  "ai_agent_definition": "AI Agent Definition: Define roles, responsibilities, and boundaries for specialized AI agents.",
+  "prd_and_spring_planner": "PRD & Sprint Planner: Generate comprehensive Product Requirements Documents with atomic task breakdowns and sprint roadmaps.",
+  "document_generator": "Documentation Generator: Quickly scaffold architecture.md, conventions.md, or project overviews.",
+  "content_enrichment": "Content Enrichment: Read existing markdown files, apply AI-driven refinements, and save the enriched versions.",
+  "dual_interface": "Dual Interface: Use the interactive CLI or the local Web GUI."
 }
